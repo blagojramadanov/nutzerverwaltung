@@ -3,16 +3,13 @@ import type { ValidationError } from "../types/Validation";
 
 export function useFormInput(initialValue: string, required = false) {
   const [value, setValue] = useState(initialValue);
-
   const [error, setError] = useState<ValidationError>({
     isError: false,
     errorMessage: "",
   });
 
-  function handleChange(
-    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) {
-    const newValue = event.target.value;
+  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+    const newValue = e.target.value;
     setValue(newValue);
     checkIfValid(newValue);
   }
@@ -29,10 +26,5 @@ export function useFormInput(initialValue: string, required = false) {
     return true;
   }
 
-  return {
-    value,
-    handleChange,
-    error,
-    checkIfValid,
-  };
+  return { value, handleChange, error, checkIfValid };
 }

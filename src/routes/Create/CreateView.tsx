@@ -6,16 +6,18 @@ import UserForm from "../../components/UserForm/UserForm";
 
 function CreateView() {
   const { addUser } = useContext(UserContext);
-
   const navigate = useNavigate();
 
   function handleNewUser(user: User) {
     addUser(user);
-    alert("Nutzer wurde hinzugefügt! ✅");
     navigate("/overview");
   }
 
-  return <UserForm user={undefined} onSubmit={handleNewUser} />;
+  return (
+    <div style={{ padding: "2rem" }}>
+      <UserForm user={undefined} onSubmit={handleNewUser} />
+    </div>
+  );
 }
 
 export default CreateView;

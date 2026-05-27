@@ -4,9 +4,7 @@ import type { User } from "../types/User";
 export function useUserList() {
   function loadUsersFromStorage(): User[] {
     const saved = localStorage.getItem("users");
-    if (saved) {
-      return JSON.parse(saved);
-    }
+    if (saved) return JSON.parse(saved);
     return [];
   }
 
@@ -18,20 +16,15 @@ export function useUserList() {
   }
 
   function addUser(user: User) {
-    const updatedList = [...users, user];
-    saveAndSet(updatedList);
+    saveAndSet([...users, user]);
   }
 
   function removeUser(userId: number) {
-    const updatedList = users.filter((u) => u.id !== userId);
-    saveAndSet(updatedList);
+    saveAndSet(users.filter((u) => u.id !== userId));
   }
 
   function updateUser(updatedUser: User) {
-    const updatedList = users.map((u) =>
-      u.id === updatedUser.id ? updatedUser : u,
-    );
-    saveAndSet(updatedList);
+    saveAndSet(users.map((u) => (u.id === updatedUser.id ? updatedUser : u)));
   }
 
   return { users, addUser, removeUser, updateUser };

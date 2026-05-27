@@ -6,11 +6,8 @@ import UserForm from "../../components/UserForm/UserForm";
 
 function EditView() {
   const { id } = useParams();
-
   const { users, updateUser } = useContext(UserContext);
-
   const navigate = useNavigate();
-
   const [editUser, setEditUser] = useState<User | undefined>(undefined);
 
   useEffect(() => {
@@ -20,15 +17,22 @@ function EditView() {
 
   function handleUpdate(updatedUser: User) {
     updateUser(updatedUser);
-    alert("Nutzer wurde aktualisiert!");
     navigate("/overview");
   }
 
   if (!editUser) {
-    return <p>Nutzer nicht gefunden.</p>;
+    return (
+      <div style={{ padding: "2rem", color: "#888" }}>
+        Nutzer nicht gefunden.
+      </div>
+    );
   }
 
-  return <UserForm user={editUser} onSubmit={handleUpdate} />;
+  return (
+    <div style={{ padding: "2rem" }}>
+      <UserForm user={editUser} onSubmit={handleUpdate} />
+    </div>
+  );
 }
 
 export default EditView;

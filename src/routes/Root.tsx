@@ -8,7 +8,6 @@ function Root() {
       <div className="layout-sidebar">
         <Sidebar />
       </div>
-
       <main className="layout-content">
         <Outlet />
       </main>
