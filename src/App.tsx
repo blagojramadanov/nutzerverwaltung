@@ -14,7 +14,7 @@ import "./App.css";
 const router = createBrowserRouter(
   [
     {
-      path: "/nutzerverwaltung",
+      path: "/",
       element: <Root />,
       children: [
         { index: true, element: <Navigate to="/overview" replace /> },
