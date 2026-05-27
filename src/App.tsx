@@ -24,7 +24,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: "/nutzerverwaltung" },
+  { basename: "/" },
 );
 
 function App() {
