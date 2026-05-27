@@ -1,0 +1,84 @@
+.userform {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 420px;
+  padding: 2rem;
+  background-color: #1e1e2e;
+  border-radius: 16px;
+  border: 1px solid #2e2e42;
+}
+
+.userform-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8888aa;
+  letter-spacing: 0.03em;
+}
+
+.field-icon {
+  display: flex;
+  align-items: center;
+  color: #4476ff;
+}
+
+.input {
+  padding: 0.65rem 0.9rem;
+  background-color: #12122a;
+  border: 1px solid #2e2e42;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input:focus {
+  border-color: #4476ff;
+}
+
+.input--error {
+  border-color: #d50a0a;
+}
+
+.error-text {
+  font-size: 0.78rem;
+  color: #d50a0a;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #4476ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.submit-btn:hover {
+  background-color: #2e5de0;
+}
